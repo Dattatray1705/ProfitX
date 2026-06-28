@@ -1,0 +1,138 @@
+/* =====================================
+   MENU RESPONSIVE CSS
+===================================== */
+.close-menu{
+  display:none;
+}
+/* Mobile */
+/* Mobile */
+
+/* MOBILE DRAWER MENU */
+@media (max-width:767px){
+
+  .menu-container{
+    position:fixed;
+    top:0;
+    left:-100%;
+
+    width:80%;
+    max-width:320px;
+    height:100vh;
+
+    background:#fff;
+
+    z-index:99999;
+
+    transition:left .3s ease;
+
+    padding:20px;
+
+    overflow-y:auto;
+
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .menu-container.active{
+    left:0;
+  }
+
+  .close-menu{
+    display:block;
+
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    border:none;
+    background:none;
+
+    font-size:24px;
+    cursor:pointer;
+  }
+
+  .menus{
+    width:100%;
+    margin-top:40px;
+  }
+.menus ul{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  gap:12px;
+
+  padding:0;
+  list-style:none;
+}
+
+.menus li{
+  width:auto;
+}
+
+.menu{
+  padding:8px 12px;
+  white-space:nowrap;
+}
+
+  .profile-wrapper{
+    width:100%;
+    margin-top:20px;
+  }
+}
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .menu-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .menus {
+    flex: 1;
+    overflow-x: auto;
+  }
+
+  .menus ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    white-space: nowrap;
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .menus ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menus li {
+    flex-shrink: 0;
+  }
+
+  .profile-wrapper {
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .menus ul {
+    gap: 15px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+
+  .menu-container {
+    max-width: 1600px;
+    margin: auto;
+  }
+
+  .menus ul {
+    gap: 20px;
+  }
+}

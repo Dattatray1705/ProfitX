@@ -1,0 +1,225 @@
+/* ===== BACKGROUND OVERLAY ===== */
+
+.sell-window-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  backdrop-filter: blur(5px);
+}
+
+
+/* ===== MAIN BOX ===== */
+
+.sell-window {
+  width: 420px;
+  max-width: 420px;
+
+  background: #ffffff;
+
+  border-radius: 22px;
+
+  padding: 35px 30px;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.25);
+
+  animation: popup 0.3s ease;
+
+  position: relative;
+}
+
+
+/* ===== POPUP ANIMATION ===== */
+
+@keyframes popup {
+
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ===== TITLE ===== */
+
+.sell-window h3 {
+  font-size: 30px;
+
+  margin-bottom: 25px;
+
+  color: #222;
+
+  text-align: center;
+
+  font-weight: 700;
+}
+
+
+/* ===== INPUT ===== */
+
+.sell-window input {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid #dcdcdc;
+
+  outline: none;
+
+  font-size: 18px;
+
+  margin-bottom: 25px;
+
+  box-sizing: border-box;
+
+  transition: 0.3s;
+}
+
+.sell-window input:focus {
+  border-color: #4184f3;
+
+  box-shadow:
+    0 0 10px rgba(65, 132, 243, 0.3);
+}
+
+
+/* ===== BUTTON ===== */
+
+.sell-window button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #4184f3,
+    #2962ff
+  );
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.sell-window button:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(41, 98, 255, 0.35);
+}
+
+
+/* ===== CLOSE BUTTON ===== */
+
+.close-btn {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  color: #777;
+
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: red;
+}
+/* =====================================
+   SELL ACTION WINDOW RESPONSIVE CSS
+===================================== */
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .sell-window {
+    width: 95%;
+    max-width: 380px;
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+  .sell-window h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .sell-window input {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .close-btn {
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .sell-window {
+    width: 90%;
+    max-width: 450px;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .sell-window {
+    width: 420px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+
+  .sell-window {
+    width: 500px;
+    padding: 40px;
+  }
+
+  .sell-window h3 {
+    font-size: 34px;
+  }
+
+  .sell-window input {
+    font-size: 20px;
+    padding: 16px;
+  }
+}

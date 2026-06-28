@@ -1,0 +1,81 @@
+/* =====================================
+   HOLDINGS RESPONSIVE CSS
+===================================== */
+
+/* Table wrapper */
+.order-table {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.order-table table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+/* Summary Row */
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.col {
+  flex: 1;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+@media (max-width: 767px) {
+
+  .title {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .col {
+    width: 100%;
+    text-align: center;
+  }
+
+  .col h5 {
+    font-size: 18px;
+  }
+
+  .col p {
+    font-size: 14px;
+  }
+}
+
+/* ==========================
+   TABLET
+========================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .row {
+    gap: 15px;
+  }
+
+  .col h5 {
+    font-size: 20px;
+  }
+}
+
+/* ==========================
+   LARGE DESKTOP
+========================== */
+@media (min-width: 1440px) {
+
+  .order-table table {
+    min-width: 100%;
+  }
+}

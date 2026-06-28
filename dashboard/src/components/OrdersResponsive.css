@@ -1,0 +1,113 @@
+/* =====================================
+   ORDERS RESPONSIVE CSS
+===================================== */
+
+/* Table Wrapper */
+.orders {
+    margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.order-table {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.order-table table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+/* Empty Orders Screen */
+.no-orders {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.no-orders p {
+  margin-bottom: 20px;
+}
+
+.no-orders .btn {
+  display: inline-block;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 767px) {
+
+  .orders {
+    padding: 10px;
+  }
+
+  .order-table table {
+    min-width: 500px;
+  }
+
+  .order-table th,
+  .order-table td {
+    font-size: 13px;
+    padding: 10px;
+    white-space: nowrap;
+  }
+
+  .no-orders {
+    padding: 30px 15px;
+  }
+
+  .no-orders p {
+    font-size: 15px;
+  }
+
+  .no-orders .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .orders {
+    padding: 15px;
+  }
+
+  .order-table th,
+  .order-table td {
+    padding: 12px;
+  }
+}
+
+/* ==========================
+   LAPTOP
+========================== */
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .orders {
+    padding: 20px;
+  }
+}
+
+/* ==========================
+   LARGE DESKTOP
+========================== */
+
+@media (min-width: 1440px) {
+
+  .order-table table {
+    min-width: 100%;
+  }
+
+  .orders {
+    padding: 25px;
+  }
+}

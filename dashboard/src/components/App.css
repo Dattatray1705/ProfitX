@@ -1,0 +1,134 @@
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.apps-container {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, #f5f7fa, #e4ecf5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.coming-card {
+  width: 100%;
+  max-width: 450px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: float 3s ease-in-out infinite;
+}
+
+.icon {
+  font-size: 60px;
+  color: #6c63ff;
+  margin-bottom: 20px;
+}
+
+.coming-card h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.coming-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.stey {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #6c63ff, #4f46e5);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+.stey:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.5);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .coming-card {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .icon {
+    font-size: 45px;
+  }
+
+  .coming-card h1 {
+    font-size: 28px;
+  }
+
+  .coming-card p {
+    font-size: 14px;
+  }
+
+  .stey {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .coming-card {
+    max-width: 550px;
+  }
+
+  .coming-card h1 {
+    font-size: 36px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1440px) {
+  .coming-card {
+    max-width: 550px;
+    padding: 50px;
+  }
+
+  .coming-card h1 {
+    font-size: 48px;
+  }
+
+  .coming-card p {
+    font-size: 18px;
+  }
+}

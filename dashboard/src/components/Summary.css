@@ -1,0 +1,120 @@
+.loss {
+  color: rgb(203, 21, 21) !important;
+}
+
+.profit {
+  color: green !important;
+}
+
+/* =====================================
+   SUMMARY RESPONSIVE CSS
+===================================== */
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .username h6 {
+    font-size: 20px;
+  }
+
+  .section {
+    padding: 15px;
+  }
+
+  .data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .data hr {
+    display: none;
+  }
+
+  .first {
+    text-align: center;
+  }
+
+  .first h3 {
+    font-size: 28px;
+  }
+
+  .second {
+    width: 100%;
+  }
+
+  .second p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .second span {
+    font-weight: 600;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .section {
+    padding: 20px;
+  }
+
+  .first h3 {
+    font-size: 32px;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .section {
+    padding: 25px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+
+  .section {
+    padding: 30px;
+  }
+
+  .username h6 {
+    font-size: 28px;
+  }
+
+  .first h3 {
+    font-size: 42px;
+  }
+
+  .second p {
+    font-size: 18px;
+  }
+}
+.section {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first h3 {
+  font-size: 36px;
+}
+
+.second p {
+  margin-bottom: 10px;
+}
+
+.divider {
+  margin-top: 15px;
+}

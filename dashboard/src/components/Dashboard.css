@@ -1,0 +1,251 @@
+/* =====================================
+   DASHBOARD RESPONSIVE CSS
+===================================== */
+
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  align-items: flex-start;
+}
+.watchlist-container {
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  overflow-x: hidden;
+  padding: 20px;
+}
+.watchlist-wrapper {
+  display: block;
+}
+.watchlist-toggle {
+  display: none;
+}
+.watchlist-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 9998;
+}
+.close-watchlist{
+  position:absolute;
+  top:10px;
+  right:10px;
+  z-index:100001;
+  border:none;
+  padding:8px 12px;
+  border-radius:6px;
+}
+.mobile-header{
+  display:none;
+}
+/* ==========================
+   MOBILE
+========================== */
+@media (max-width: 767px) {
+
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+
+  .content {
+    width: 100%;
+    padding: 10px;
+  }
+   .watchlist-toggle {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10000;
+
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #387ed1;
+    color: white;
+    cursor: pointer;
+  }
+
+  .watchlist-wrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    transition: all .3s ease;
+  }
+
+  .watchlist-wrapper.active {
+    left: 0;
+  }
+   .watchlist-container {
+    display: block !important;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+/* ==========================
+   TABLET
+========================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .dashboard-container {
+    flex-direction: row;
+  }
+
+  .watchlist-container {
+    width: 280px;
+    min-width: 280px;
+    height: auto;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+
+  .content {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* ==========================
+   LAPTOP
+========================== */
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .content {
+    padding: 20px;
+  }
+}
+
+/* ==========================
+   LARGE DESKTOP
+========================== */
+@media (min-width: 1440px) {
+
+  .content {
+    padding: 25px;
+  }
+
+  .achievement-modal {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .watchlist-wrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 99999;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .watchlist-wrapper.active {
+    left: 0;
+  }
+
+  .watchlist-container {
+    width: 100%;
+    min-width: 100%;
+    height: 100vh;
+  }
+
+  .watchlist-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100000;
+  }
+}
+/* MOBILE HEADER */
+
+.mobile-header {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100001;
+  }
+
+  .menu-toggle {
+    display: block;
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .topbar-container {
+    display: none;
+  }
+}
+
+.mobile-header{
+  display:none;
+}
+
+@media (max-width:767px){
+
+  .mobile-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    height:60px;
+    padding:0 15px;
+
+    background:white;
+    border-bottom:1px solid #ddd;
+
+    position:sticky;
+    top:0;
+    z-index:100000;
+  }
+
+  .menu-toggle{
+    display:block !important;
+
+    border:none;
+    background:none;
+
+    font-size:24px;
+    cursor:pointer;
+  }
+}

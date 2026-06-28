@@ -1,0 +1,640 @@
+:root {
+  /* Backgrounds */
+  --bg-primary: #0f172a;
+  --bg-secondary: #111827;
+  --bg-card: #1e293b;
+  --bg-hover: #334155;
+
+  /* Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  /* Brand */
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+
+  /* Status */
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  /* Border */
+  --border: #334155;
+
+  /* Shadow */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+body.dark-theme {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.dark-theme * {
+  transition: all .25s ease;
+}
+body.dark-theme .menu-container {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+body.dark-theme .menu {
+  color: var(--text-muted);
+}
+
+body.dark-theme .menu:hover {
+  color: var(--text-primary);
+}
+
+body.dark-theme .selected {
+  color: var(--accent);
+}
+body.dark-theme .watchlist {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+}
+
+body.dark-theme .watchlist-item:hover {
+  background: var(--bg-hover);
+}
+body.dark-theme .settings-container input,
+body.dark-theme .profile-container input,
+body.dark-theme .watchlist input {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+body.dark-theme .sell-window * {
+  color: #111827;
+}
+body.dark-theme input::placeholder {
+  color: var(--text-muted);
+}
+body.dark-theme .profile-container {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+body.dark-theme .profile-name {
+  color: var(--text-primary);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+body.dark-theme .profile-email {
+  color: var(--text-secondary);
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #8b5cf6
+  );
+
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 8px 24px rgba(59,130,246,.35);
+}
+.info-card {
+   background: #1e293b;
+  border: 1px solid #334155;
+
+  border-radius: 18px;
+
+  padding: 22px;
+
+  transition: .3s;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 10px 30px rgba(59,130,246,.15);
+}
+.info-card label {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.info-card p,
+.info-card span,
+.info-card h4 {
+  color: #ffffff !important;
+  font-size: 24px;
+  font-weight: 700;
+}
+.edit-btn {
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #2563eb
+  );
+
+  color: white;
+  border: none;
+  border-radius: 14px;
+}
+
+.delete-btn {
+  background: linear-gradient(
+    135deg,
+    #ef4444,
+    #dc2626
+  );
+
+  color: white;
+  border: none;
+  border-radius: 14px;
+}
+body.dark-theme .profile-dropdown {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+body.dark-theme .dropdown-item {
+  color: var(--text-primary);
+}
+
+body.dark-theme .dropdown-item:hover {
+  background: var(--bg-hover);
+}
+.profit {
+  color: var(--success);
+}
+
+.loss {
+  color: var(--danger);
+}
+/* SETTINGS PAGE */
+
+.settings-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.settings-card {
+  width: 100%;
+  max-width: 800px;
+
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary),
+    var(--bg-primary)
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  padding: 32px;
+
+  box-shadow: var(--shadow);
+}
+
+.settings-header h2 {
+  font-size: 42px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.settings-header p {
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  padding: 24px;
+}
+
+.setting-item h3 {
+  margin: 0;
+  color: white;
+  font-size: 22px;
+}
+
+.setting-item p {
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+/* TOGGLE SWITCH */
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  display: inline-block;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: #475569;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 4px;
+  top: 4px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.toggle input:checked + .toggle-slider {
+  background: #3b82f6;
+}
+
+.toggle input:checked + .toggle-slider::before {
+  transform: translateX(28px);
+}
+/* BUY / SELL MODAL FIX */
+
+body.dark-theme .regular-order {
+  background: white;
+  color: #111827;
+}
+
+body.dark-theme .regular-order label,
+body.dark-theme .regular-order span,
+body.dark-theme .regular-order p {
+  color: #475569 !important;
+}
+
+body.dark-theme .regular-order input {
+  background: white !important;
+  color: #111827 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+/* BUY / SELL MODAL FIX */
+
+body.dark-theme #buy-window,
+body.dark-theme #sell-window {
+  background: #ffffff;
+  color: #111827;
+}
+
+body.dark-theme #buy-window legend,
+body.dark-theme #sell-window legend {
+  color: #475569 !important;
+  font-weight: 600;
+}
+
+body.dark-theme #buy-window span,
+body.dark-theme #sell-window span {
+  color: #475569 !important;
+}
+
+body.dark-theme #buy-window input,
+body.dark-theme #sell-window input {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+.settings-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+/* LIGHT MODE */
+
+.settings-page h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+.settings-group h4 {
+  color: #64748b;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 0;
+
+ border-bottom: 1px solid #e2e8f0;
+}
+
+.settings-row span {
+  font-size: 18px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.settings-row p {
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Dark mode */
+body.dark-theme .settings-page h1 {
+  color: white;
+}
+
+body.dark-theme .settings-group h4 {
+  color: #94a3b8;
+}
+
+body.dark-theme .settings-row span {
+  color: white;
+}
+
+body.dark-theme .settings-row p {
+  color: #94a3b8;
+}
+
+body.dark-theme .settings-row {
+  border-bottom: 1px solid #334155;
+}
+.achievement-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.dark-theme .achievement-row {
+  border-bottom: 1px solid #444;
+}
+.unlocked-card {
+  margin-top: 12px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  border-left: 5px solid #28a745;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.unlocked-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.unlocked-card p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.dark-theme .unlocked-card {
+  background: #2a2a2a;
+}
+
+.dark-theme .unlocked-card p {
+  color: #ccc;
+}
+/* Achievement Modal */
+
+.achievement-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.achievement-modal {
+  width: 500px;
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.3);
+    position: relative;
+}
+
+.achievement-modal h2 {
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+.achievement-modal h3 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #22c55e;
+}
+
+.achievement-modal p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.achievement-modal button {
+  padding: 12px 30px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Dark Mode */
+
+body.dark-theme .achievement-modal {
+  background: #1e293b;
+}
+
+body.dark-theme .achievement-modal h2 {
+  color: white;
+}
+
+body.dark-theme .achievement-modal p {
+  color: #cbd5e1;
+}
+.achievement-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  color: #64748b;
+
+  transition: 0.3s;
+}
+
+.achievement-close:hover {
+  color: #760b0b;
+  transform: scale(1.1);
+}
+.awesome-text {
+  margin-top: 20px;
+
+  font-size: 32px;
+  font-weight: 900;
+
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #8b5cf6
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-align: center;
+
+  letter-spacing: 1px;
+}
+/* ==========================
+   SETTINGS RESPONSIVE CSS
+========================== */
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .settings-page {
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .settings-page h1 {
+    font-size: 28px;
+  }
+
+  .settings-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .settings-row span {
+    font-size: 16px;
+  }
+
+  .settings-row p {
+    font-size: 13px;
+  }
+
+  .toggle {
+    align-self: flex-end;
+  }
+
+  .achievement-row {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .achievement-modal {
+    width: 95%;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .achievement-modal h2 {
+    font-size: 24px;
+  }
+
+  .achievement-modal h3 {
+    font-size: 22px;
+  }
+
+  .awesome-text {
+    font-size: 24px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .settings-page {
+    max-width: 90%;
+  }
+
+  .achievement-modal {
+    width: 80%;
+    max-width: 500px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+
+  .settings-page {
+    max-width: 1000px;
+  }
+
+  .settings-page h1 {
+    font-size: 42px;
+  }
+
+  .settings-row {
+    padding: 25px 0;
+  }
+
+  .achievement-modal {
+    width: 600px;
+    padding: 40px;
+  }
+
+  .achievement-modal h3 {
+    font-size: 36px;
+  }
+}

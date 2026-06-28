@@ -1,0 +1,83 @@
+/* =====================================
+   TOPBAR RESPONSIVE CSS
+===================================== */
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+  .topbar-container {
+      display: none;
+  }
+
+
+  .nifty,
+  .sensex {
+    gap: 5px;
+  }
+
+  .index {
+    font-size: 12px;
+  }
+
+  .index-points {
+    font-size: 13px;
+  }
+
+  .percent {
+    font-size: 12px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .topbar-container {
+    padding: 10px 15px;
+  }
+
+  .indices-container {
+    gap: 25px;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .topbar-container {
+    padding: 0 20px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+
+  .topbar-container {
+    padding: 0 30px;
+  }
+
+  .index {
+    font-size: 16px;
+  }
+
+  .index-points {
+    font-size: 17px;
+  }
+}
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.indices-container {
+  display: flex;
+  gap: 30px;
+}
+
+.nifty,
+.sensex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

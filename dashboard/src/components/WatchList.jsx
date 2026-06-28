@@ -1,0 +1,259 @@
+import React, { useState, useContext } from "react";
+
+import axios from "axios";
+import './watchList.css';
+
+import GeneralContext from "./GeneralContext";
+
+import { Tooltip, Grow } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import {
+  BarChartOutlined,
+  KeyboardArrowDown,
+  KeyboardArrowUp,
+  MoreHoriz,
+} from "@mui/icons-material";
+
+import { watchlist } from "../data/data";
+
+import { DoughnutChart } from "./DoughnoutChart";
+
+const WatchList = () => {
+
+  // SEARCH STATE
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // FILTER STOCKS
+
+  const filteredStocks = watchlist.filter((stock) =>
+    stock.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  );
+
+  const labels = filteredStocks.map(
+    (subArray) => subArray["name"]
+  );
+
+  const data = {
+    labels,
+
+    datasets: [
+      {
+        label: "Price",
+
+        data: filteredStocks.map(
+          (stock) => stock.price
+        ),
+
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.5)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(255, 206, 86, 0.5)",
+          "rgba(75, 192, 192, 0.5)",
+          "rgba(153, 102, 255, 0.5)",
+          "rgba(255, 159, 64, 0.5)",
+        ],
+
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  return (
+
+    <div className="watchlist-container">
+
+      <div className="search-container">
+
+        <input 
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search eg: infy, tcs"
+          className="search"
+          value={searchTerm}
+          onChange={(e) =>
+            setSearchTerm(e.target.value)
+          }
+        />
+
+        <span className="counts">
+        Total count:  {filteredStocks.length}
+        </span>
+
+      </div>
+
+      <ul className="list">
+
+        {filteredStocks.map((stock, index) => {
+
+          return (
+            <WatchListItem
+              stock={stock}
+              key={index}
+            />
+          );
+
+        })}
+
+      </ul>
+
+      <DoughnutChart data={data} />
+
+    </div>
+  );
+};
+
+export default WatchList;
+
+
+// ================= WATCHLIST ITEM =================
+
+const WatchListItem = ({ stock }) => {
+
+  const [showWatchlistActions,
+    setShowWatchlistActions] =
+      useState(false);
+
+  const handleMouseEnter = () => {
+    setShowWatchlistActions(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowWatchlistActions(false);
+  };
+
+  return (
+
+    <li
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+
+      <div className="item">
+
+        <p className={
+          stock.isDown ? "down" : "up"
+        }>
+          {stock.name}
+        </p>
+
+        <div className="itemInfo">
+
+          <span className="percent">
+            {stock.percent}
+          </span>
+
+          {stock.isDown ? (
+
+            <KeyboardArrowDown
+              className="down"
+            />
+
+          ) : (
+
+            <KeyboardArrowUp
+              className="up"
+            />
+
+          )}
+
+          <span className="price">
+            {stock.price}
+          </span>
+
+        </div>
+
+      </div>
+
+      {
+        showWatchlistActions && (
+          <WatchListActions uid={stock.name}stockPrice={stock.price} />
+        )
+      }
+
+    </li>
+  );
+};
+
+
+// ================= ACTIONS =================
+
+const WatchListActions = ({ uid ,stockPrice, }) => {
+
+  const generalContext =
+    useContext(GeneralContext);
+
+  const handleBuyClick = () => {
+
+    generalContext.openBuyWindow(
+      uid,
+      "BUY",stockPrice
+    );
+  };
+
+  const handleSellClick = () => {
+
+    generalContext.openBuyWindow(
+      uid,
+      "SELL",
+      stockPrice
+    );
+  };
+
+  return (
+
+    <span className="actions">
+
+      <span>
+
+        <Tooltip
+          title="Buy (B)"
+          placement="top"
+          arrow
+        >
+
+          <button
+            className="buy"
+            onClick={handleBuyClick}
+          >
+            buy
+          </button>
+
+        </Tooltip>
+
+        <Tooltip
+          title="Sell (S)"
+          placement="top"
+          arrow
+        >
+
+          <button
+            className="sell"
+            onClick={handleSellClick}
+          >
+            Sell
+          </button>
+
+        </Tooltip>
+
+
+
+  
+
+      </span>
+
+    </span>
+  );
+};

@@ -1,0 +1,269 @@
+.fund-card {
+  width: 95%;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.fund-card h1 {
+  color: #387ed1;
+  margin: 20px 0;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 8px;
+}
+
+.btn-green {
+  background: #28a745;
+}
+
+.btn-blue {
+  background: #387ed1;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+ backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  width: 380px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.quick-amounts {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quick-amounts button {
+  padding: 8px 12px;
+  border: none;
+  background: #f2f2f2;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+.balance-card {
+  background: #f5f7fb;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.balance-card p {
+  margin: 0;
+  color: gray;
+}
+
+.balance-card h3 {
+  margin-top: 5px;
+  color: #387ed1;
+}
+
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cancel-btn,
+.withdraw-btn {
+  flex: 1;
+  height: 55px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  border: 1px solid #d1d5db;
+  background: white;
+}
+
+.withdraw-btn {
+  border: none;
+  background: #387ed1;
+  color: white;
+}
+.cancel-btn,
+.withdraw-btn {
+  flex: 1;
+  height: 55px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  border: 1px solid #d1d5db;
+  background: white;
+}
+
+.withdraw-btn {
+  border: none;
+  background: #387ed1;
+  color: white;
+}
+.modal-actions{
+  display:flex;
+  gap:12px;
+  margin-top:25px;
+}
+
+.modal-actions button{
+  flex:1;
+  height:50px;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:500;
+}
+
+.cancel-btn{
+  background:#f3f4f6;
+  border:none;
+  color:#374151;
+}
+
+.add-btn{
+  background:#16a34a;
+  border:none;
+  color:white;
+}
+.error-message {
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* =====================================
+   FUNDS RESPONSIVE CSS
+===================================== */
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .fund-card {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .fund-card h2 {
+    font-size: 20px;
+  }
+
+  .fund-card h1 {
+    font-size: 32px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  .modal-box {
+    width: 95%;
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .quick-amounts {
+    justify-content: center;
+  }
+
+  .quick-amounts button {
+    flex: 1 1 40%;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .fund-card {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .modal-box {
+    width: 90%;
+    max-width: 450px;
+  }
+}
+
+/* Medium Laptop */
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+  .fund-card {
+    max-width: 550px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+
+  .fund-card {
+    max-width: 650px;
+  }
+
+  .modal-box {
+    max-width: 450px;
+  }
+}
